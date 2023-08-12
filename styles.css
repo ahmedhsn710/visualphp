@@ -1,0 +1,219 @@
+:root {
+    --bg_color: #41413F;
+    --sec_color: #FC9C07;
+    --ter_color: #274A53;
+}
+
+body {
+    background-color: var(--bg_color) !important;
+}
+
+a {
+    text-decoration: none !important;
+    text-align: center;
+    color: var(--sec_color) !important;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.nav {
+    background-color: var(--bg_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+#help {
+    position: absolute;
+    color: var(--sec_color);
+    top: 5%;
+    right: 5%;
+    font-size: 34px;
+}
+
+#help:hover {
+    transform: scale(1.2);
+}
+
+.blockly-wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: var(--sec_color);
+    border-radius: 30px;
+    padding: 20px 15px;
+    margin: 4.5vh 10vw;
+    height: 600px;
+}
+
+.blockly-column {
+    position: relative;
+    width: calc(50% - 5px);
+    background-color: var(--ter_color);
+    border-radius: 20px !important;
+    margin: 0 5px;
+}
+
+.blockly-column:first-child,
+.blockly-column:last-child {
+    width: calc(25% - 5px);
+}
+
+
+.workspace {
+    position: relative;
+    margin: 30px auto;
+    padding: 10px;
+    height: 80%;
+    width: 80%;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+.output {
+    height: 80%;
+    width: 80%;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+.blockly-toolbox {
+    margin: 30px auto;
+    height: 80%;
+    background-color: var(--ter_color);
+}
+
+.heading {
+    width: 80%;
+    text-align: center;
+    background-color: antiquewhite;
+    margin: 10px auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: 1400;
+}
+
+.components {
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+    background-color: antiquewhite;
+    margin: 10px auto;
+    cursor: move;
+}
+
+.run {
+    position: absolute;
+    background-color: var(--sec_color);
+    color: antiquewhite;
+    font-size: larger;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.dragging {
+    opacity: 0.5;
+}
+
+.popup-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: var(--ter_color);
+    color: var(--sec_color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup-form button {
+    color: var(--bg_color);
+    background-color: antiquewhite;
+    border-radius: 10px;
+    margin: 10px 5px;
+    min-width: 25px;
+}
+
+.popup-form textarea {
+    background-color: antiquewhite;
+    max-height: 150px;
+}
+
+.popup-form button[type="submit"] {
+    color: var(--sec_color);
+    background-color: var(--bg_color);
+}
+
+.blur {
+    filter: blur(3px);
+}
+
+.last {
+    position: absolute;
+    bottom: 10px;
+}
+
+.draggable[comp="text"] {
+    background-color: var(--ter_color);
+    color: var(--sec_color);
+    border-radius: 5px;
+    padding-left: 10px;
+    margin: 3px 3px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.draggable[comp="text"]:hover {
+    transform: scale(1.05);
+}
+
+.shrink {
+    animation-name: shrink;
+}
+
+@keyframes shrink {
+    from {
+        width: 80%;
+        left: 0;
+        top: 0;
+    }
+
+    to {
+        font-size: 0;
+        width: 0;
+        height: 0;
+        left: 50%;
+    }
+}
+
+/* width and height of the scrollbar track */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* background of the scrollbar track */
+::-webkit-scrollbar-track {
+    background: antiquewhite;
+    border-radius: 10px;
+}
+
+/* color of the scrollbar handle */
+::-webkit-scrollbar-thumb {
+    background-color: var(--sec_color);
+    width: 20px;
+    border-radius: 5px;
+
+}
